@@ -25,12 +25,12 @@ targets = [
     "go", "link", "url", "short", "track", "tracking", "click", "analytics"
 ]
 found = []
-website = input("Enter the name of the website you want to scan: ")
+website = input("Enter domain (example.com): ")
 
 start = time.perf_counter()
 
 def scan_directory(path):
-    url = "https://" + path + "." + website + ".com"
+    url = "https://" + path + "." + website
     try:
         response = requests.get(url)
         found.append(url)
