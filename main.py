@@ -33,7 +33,8 @@ def scan_directory(path):
     url = "https://" + path + "." + website
     try:
         response = requests.get(url)
-        found.append(url)
+        if response.status_code < 400:
+            found.append(url)
     except:
         pass
 
